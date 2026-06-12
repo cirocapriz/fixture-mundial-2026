@@ -1,0 +1,449 @@
+/* ==========================================================================
+   1. VARIABLES DE COLOR Y CONFIGURACIÓN BASE
+   ========================================================================== */
+:root {
+    --bg-principal: #0d1b2a;
+    --bg-card: #1b263b;
+    --header-grupo: #3a506b;
+    --texto-blanco: #ffffff;
+    --texto-secundario: #a5a5a5;
+    --input-bg: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    color: var(--texto-blanco);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* Imagen de fondo combinada con capas oscuras para que no moleste la lectura */
+    background: 
+        linear-gradient(to bottom, rgba(11, 15, 25, 0.85) 0%, rgba(18, 37, 26, 0.92) 100%),
+        url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Contenedor maestro para centrar todo en la pantalla */
+.main-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #4ade80;
+    width: 100%;
+}
+
+/* ==========================================================================
+   2. FASE DE GRUPOS & TABLAS DE POSICIONES
+   ========================================================================== */
+.fixture-container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Tarjetas de Grupos estilo Cristal (Glassmorphism) */
+.grupo-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.grupo-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(74, 222, 128, 0.4); /* Brillo verde sutil */
+}
+
+/* Bordes superiores de colores para distinguir las zonas */
+#card-GRUPO-A { border-top: 4px solid #4ade80; }
+#card-GRUPO-B { border-top: 4px solid #60a5fa; }
+#card-GRUPO-C { border-top: 4px solid #facc15; }
+#card-GRUPO-D { border-top: 4px solid #f472b6; }
+#card-GRUPO-E { border-top: 4px solid #ce27b2; }
+#card-GRUPO-F { border-top: 4px solid #20d18d; }
+#card-GRUPO-G { border-top: 4px solid #dd5050; }
+#card-GRUPO-H { border-top: 4px solid #87ceeb; }
+#card-GRUPO-I { border-top: 4px solid #ffd700; }
+#card-GRUPO-J { border-top: 4px solid #ff69b4; }
+#card-GRUPO-K { border-top: 4px solid #c41297; }
+#card-GRUPO-L { border-top: 4px solid #9370db; }
+
+.grupo-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.partido {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 15px;
+}
+
+.partidos-list .partido:last-child {
+    border-bottom: none;
+}
+
+.info-partido {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--texto-secundario);
+    margin-bottom: 8px;
+}
+
+.enfrentamiento {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.equipo {
+    display: flex;
+    align-items: center;
+    width: 35%;
+}
+
+.equipo.local { justify-content: flex-start; }
+.equipo.visitante { justify-content: flex-end; }
+
+.codigo {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0 10px;
+}
+
+.bandera {
+    width: 35px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.marcador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.goles-input {
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--input-bg);
+    color: #000;
+}
+
+.goles-input::-webkit-inner-spin-button, 
+.goles-input::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.separador {
+    margin: 0 8px;
+    font-weight: bold;
+}
+
+.tabla-posiciones {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+th {
+    color: var(--texto-secundario);
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-weight: 500;
+}
+
+td { padding: 6px 4px; }
+.text-left { text-align: left; }
+.font-bold { font-weight: bold; }
+.text-verde { color: #4ade80; }
+.text-azul { color: #3a86ff; font-weight: bold; }
+
+tr.clasificado {
+    background-color: rgba(74, 222, 128, 0.05);
+}
+
+/* ==========================================================================
+   3. ESTRUCTURA DE FASES ELIMINATORIAS (BASE MÓVIL / VENTANA ACHICADA)
+   ========================================================================== */
+#fixture-eliminatorias {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.fase-eliminatoria-seccion {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.fase-eliminatoria-seccion .partidos-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+/* Por defecto (pantallas chicas o explorador a media ventana): Ocupan el 100% del ancho */
+.partido-eliminatorio {
+    background: rgba(20, 25, 35, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    flex: 0 1 100%; /* Toma todo el ancho disponible */
+    box-sizing: border-box;
+}
+
+.partido-eliminatorio:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+}
+
+.partido-eliminatorio .separador {
+    background: #1f2937;
+    color: #9ca3af;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 6px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    min-width: 18px;
+    text-align: center;
+    margin: 0 0.5rem;
+}
+
+.equipo-input {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 6px 10px;
+    width: 120px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+.equipo-input:focus {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: #4ade80;
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.3);
+    outline: none;
+}
+
+.equipo-input::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: 0px;
+}
+
+.equipo.visitante .equipo-input {
+    text-align: right;
+}
+
+/* ==========================================================================
+   4. IDENTIDAD VISUAL POR ETAPA ELIMINATORIA
+   ========================================================================== */
+/* Dieciseisavos y Octavos (Tono Plata) */
+.fase-eliminatoria-seccion:nth-of-type(1) .partido-eliminatorio,
+.fase-eliminatoria-seccion:nth-of-type(2) .partido-eliminatorio {
+    border-left: 4px solid #94a3b8;
+}
+.fase-eliminatoria-seccion:nth-of-type(1) h2,
+.fase-eliminatoria-seccion:nth-of-type(2) h2 {
+    color: #cbd5e1;
+}
+
+/* Cuartos de Final (Fuego Azul) */
+.fase-eliminatoria-seccion:nth-of-type(3) .partido-eliminatorio {
+    border-left: 5px solid #3b82f6;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(20, 25, 35, 0.65) 100%);
+}
+.fase-eliminatoria-seccion:nth-of-type(3) h2 {
+    color: #60a5fa !important;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+/* Semifinales (Violeta Místico) */
+.fase-eliminatoria-seccion:nth-of-type(4) .partido-eliminatorio {
+    border-left: 5px solid #a855f7;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.07) 0%, rgba(20, 25, 35, 0.65) 100%);
+}
+.fase-eliminatoria-seccion:nth-of-type(4) h2 {
+    color: #c084fc !important;
+    text-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+}
+
+/* Tercer Puesto (Bronce) */
+.fase-eliminatoria-seccion:nth-of-type(5) .partido-eliminatorio {
+    border-left: 5px solid #cd7f32;
+    background: linear-gradient(135deg, rgba(205, 127, 50, 0.05) 0%, rgba(20, 25, 35, 0.65) 100%);
+}
+.fase-eliminatoria-seccion:nth-of-type(5) h2 {
+    color: #cd7f32 !important;
+}
+
+/* LA GRAN FINAL (Dorado Absoluto) */
+.fase-eliminatoria-seccion:nth-of-type(6) .partido-eliminatorio {
+    border: 2px solid #eab308;
+    background: linear-gradient(135deg, rgba(234, 179, 8, 0.12) 0%, rgba(15, 18, 28, 0.85) 100%) !important;
+    box-shadow: 0 0 25px rgba(234, 179, 8, 0.25);
+    transform: scale(1.03);
+}
+.fase-eliminatoria-seccion:nth-of-type(6) .equipo-input {
+    border-color: rgba(234, 179, 8, 0.4);
+}
+.fase-eliminatoria-seccion:nth-of-type(6) .equipo-input:focus {
+    border-color: #eab308;
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
+}
+.fase-eliminatoria-seccion:nth-of-type(6) h2 {
+    color: #facc15 !important;
+    font-size: 2rem !important;
+    text-shadow: 0 0 15px rgba(234, 179, 8, 0.6);
+    letter-spacing: 3px;
+}
+
+/* Centrado automático para Tercer Puesto y Final */
+.fase-eliminatoria-seccion:nth-of-type(5) .partidos-list,
+.fase-eliminatoria-seccion:nth-of-type(6) .partidos-list {
+    justify-content: center;
+}
+
+/* ==========================================================================
+   5. DISEÑO RESPONSIVO (PANTALLAS MEDIANAS Y GRANDES)
+   ========================================================================== */
+@media (min-width: 1024px) {
+    .main-wrapper {
+        max-width: 1200px; /* Se expande en monitores grandes */
+    }
+    
+    /* Fase de grupos en dos columnas impecables */
+    #fixture-grupos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Fases eliminatorias: Máximo 2 partidos por línea */
+    .partido-eliminatorio {
+        flex: 0 1 calc(50% - 1rem); /* Ocupan exactamente la mitad del ancho */
+    }
+
+    /* La gran final mantiene un tamaño destacado y cómodo en pantallas grandes */
+    .fase-eliminatoria-seccion:nth-of-type(6) .partido-eliminatorio {
+        flex: 0 1 450px;
+    }
+}
+
+/* ==========================================================================
+   6. ELEMENTOS DE CONTACTO (FOOTER Y WHATSAPP FLOTANTE)
+   ========================================================================== */
+
+/* Botón Flotante */
+.whatsapp-float {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) rotate(5deg);
+    background-color: #20ba5a;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Footer Estilizado */
+.sitio-footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(11, 15, 25, 0.5);
+    backdrop-filter: blur(4px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sitio-footer p {
+    margin: 5px 0;
+    font-size: 0.85rem;
+    color: var(--texto-secundario);
+    letter-spacing: 0.5px;
+}
+
+.footer-link {
+    color: #4ade80;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #22c55e;
+    text-decoration: underline;
+}
+
+/* Asegurar que el footer no quede flotando si hay poco contenido */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
