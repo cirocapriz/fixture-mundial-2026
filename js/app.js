@@ -210,7 +210,15 @@ function generarEliminatoriasDOM() {
     
     for (const [nombreFase, partidos] of Object.entries(eliminatoriasData)) {
         const faseSection = document.createElement('section');
-        faseSection.className = 'fase-eliminatoria-seccion';
+        
+        // IDENTIFICACIÓN SEMÁNTICA: Distinguimos la Final de las llaves comunes
+        if (nombreFase === "FINAL") {
+            faseSection.className = 'fase-eliminatoria-seccion seccion-final-unica';
+        } else if (nombreFase === "TERCER PUESTO") {
+            faseSection.className = 'fase-eliminatoria-seccion seccion-tercer-puesto';
+        } else {
+            faseSection.className = 'fase-eliminatoria-seccion';
+        }
         
         let partidosHTML = '';
         partidos.forEach(p => {
@@ -221,11 +229,13 @@ function generarEliminatoriasDOM() {
                         <div class="equipo local">
                             <input type="text" class="equipo-input local-name" placeholder="${p.placeholderL}" data-equipo="local">
                         </div>
+
                         <div class="marcador">
-                            <input type="number" min="0" class="goles-input" data-equipo="local">
+                            <input type="text" class="goles-input goles-eliminatoria" placeholder="" data-equipo="local">
                             <span class="separador">-</span>
-                            <input type="number" min="0" class="goles-input" data-equipo="visitante">
+                            <input type="text" class="goles-input goles-eliminatoria" placeholder="" data-equipo="visitante">
                         </div>
+                        
                         <div class="equipo visitante">
                             <input type="text" class="equipo-input visitante-name" placeholder="${p.placeholderV}" data-equipo="visitante">
                         </div>
@@ -233,17 +243,25 @@ function generarEliminatoriasDOM() {
                 </div>`;
         });
         
+        // ESTRUCTURA CORREGIDA: Si es la final, no usa la clase masiva '.partidos-list'
+        const claseLista = (nombreFase === "FINAL" || nombreFase === "TERCER PUESTO") 
+            ? 'contenedor-final-bloque' 
+            : 'partidos-list';
+
         faseSection.innerHTML = `
-            <div class="fase-header" style="width: 100%; margin-top: 2rem; border-bottom: 2px solid #4ade80; padding-bottom: 0.5rem;">
-                <h2 style="color: #ffffff; text-transform: uppercase; font-size: 1.5rem; margin: 0;">${nombreFase}</h2>
+            <div class="fase-header">
+                <h2>${nombreFase}</h2>
             </div>
-            <div class="partidos-list" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem;">
+            <div class="${claseLista}">
                 ${partidosHTML}
             </div>`;
             
         contenedor.appendChild(faseSection);
     }
 }
+
+
+
 
 function calcularTablas() {
     for (const nombreGrupo of Object.keys(fixtureData)) {
@@ -294,12 +312,15 @@ function guardarPartidoGrupo(inputCambiado) {
     localStorage.setItem(`grupo_${partidoId}`, JSON.stringify({ local: golLocal, visitante: golVisitante }));
 }
 
+
 function guardarPartidoEliminatorio(inputCambiado) {
     const partidoCard = inputCambiado.closest('.partido-eliminatorio');
     const partidoId = partidoCard.getAttribute('data-partido-id');
     
     const nameL = partidoCard.querySelector('.local-name').value;
     const nameV = partidoCard.querySelector('.visitante-name').value;
+    
+    // Cambiado: Leemos el .value puro como texto, sin forzar conversión a número entero
     const golL = partidoCard.querySelector('.marcador [data-equipo="local"]').value;
     const golV = partidoCard.querySelector('.marcador [data-equipo="visitante"]').value;
 
