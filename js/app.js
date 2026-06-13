@@ -26,7 +26,7 @@ const fixtureData = {
     ],
     "GRUPO D": [
         { id: "D1", fecha: "Viernes 12 junio 22:00", estadio: "Los Angeles Stadium", loc: "USA", flagL: "us", vis: "PAR", flagV: "py" },
-        { id: "D2", fecha: "Sábado 13 junio 01:00", estadio: "BC Place Vancouver", loc: "AUS", flagL: "au", vis: "TUR", flagV: "tr" },
+        { id: "D2", fecha: "Domingo 14 junio 01:00", estadio: "BC Place Vancouver", loc: "AUS", flagL: "au", vis: "TUR", flagV: "tr" },
         { id: "D3", fecha: "Viernes 19 junio 16:00", estadio: "Seattle Stadium", loc: "USA", flagL: "us", vis: "AUS", flagV: "au" },
         { id: "D4", fecha: "Sábado 20 junio 00:00", estadio: "San Francisco Stadium", loc: "TUR", flagL: "tr", vis: "PAR", flagV: "py" },
         { id: "D5", fecha: "Jueves 25 junio 23:00", estadio: "Los Angeles Stadium", loc: "TUR", flagL: "tr", vis: "USA", flagV: "us" },
