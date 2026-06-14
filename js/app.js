@@ -20,7 +20,7 @@ const fixtureData = {
         { id: "C1", fecha: "Sábado 13 junio 19:00", estadio: "Miami Stadium", loc: "BRA", flagL: "br", vis: "MAR", flagV: "ma" },
         { id: "C2", fecha: "Sábado 13 junio 22:00", estadio: "New York Stadium", loc: "HAI", flagL: "ht", vis: "SCO", flagV: "gb-sct" },
         { id: "C3", fecha: "Viernes 19 junio 21:30", estadio: "Miami Stadium", loc: "BRA", flagL: "br", vis: "HAI", flagV: "ht" },
-        { id: "C4", fecha: "Viernes 19 junio 19:30", estadio: "Philadelphia Stadium", loc: "SCO", flagL: "gb-sct", vis: "MAR", flagV: "ma" },
+        { id: "C4", fecha: "Viernes 19 junio 19:00", estadio: "Philadelphia Stadium", loc: "SCO", flagL: "gb-sct", vis: "MAR", flagV: "ma" },
         { id: "C5", fecha: "Miércoles 24 junio 19:00", estadio: "Philadelphia Stadium", loc: "BRA", flagL: "br", vis: "SCO", flagV: "gb-sct" },
         { id: "C6", fecha: "Miércoles 24 junio 19:00", estadio: "New York Stadium", loc: "MAR", flagL: "ma", vis: "HAI", flagV: "ht" }
     ],
