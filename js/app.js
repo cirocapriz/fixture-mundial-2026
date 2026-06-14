@@ -74,7 +74,7 @@ const fixtureData = {
     ],
     "GRUPO J": [
         { id: "J1", fecha: "Martes 16 junio 22:00", estadio: "Kansas City Stadium", loc: "ARG", flagL: "ar", vis: "ALG", flagV: "dz" },
-        { id: "J2", fecha: "Martes 16 junio 01:00", estadio: "San Francisco Stadium", loc: "AUT", flagL: "at", vis: "JOR", flagV: "jo" },
+        { id: "J2", fecha: "Miércoles 17 junio 01:00", estadio: "San Francisco Stadium", loc: "AUT", flagL: "at", vis: "JOR", flagV: "jo" },
         { id: "J3", fecha: "Lunes 22 junio 14:00", estadio: "Dallas Stadium", loc: "ARG", flagL: "ar", vis: "AUT", flagV: "at" },
         { id: "J4", fecha: "Martes 23 junio 00:00", estadio: "San Francisco Stadium", loc: "JOR", flagL: "jo", vis: "ALG", flagV: "dz" },
         { id: "J5", fecha: "Sábado 27 junio 23:00", estadio: "Kansas City Stadium", loc: "ALG", flagL: "dz", vis: "AUT", flagV: "at" },
