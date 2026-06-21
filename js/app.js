@@ -1,3 +1,19 @@
+// 0. Diccionario de Nombres Completos de Países
+const nombresPaises = {
+    "MEX": "México", "RSA": "Sudáfrica", "KOR": "Corea del Sur", "CZE": "República Checa",
+    "CAN": "Canadá", "BIH": "Bosnia", "QAT": "Catar", "SUI": "Suiza",
+    "BRA": "Brasil", "MAR": "Marruecos", "HAI": "Haití", "SCO": "Escocia",
+    "USA": "Estados Unidos", "PAR": "Paraguay", "AUS": "Australia", "TUR": "Turquía",
+    "GER": "Alemania", "CUW": "Curazao", "CIV": "Costa de Marfil", "ECU": "Ecuador",
+    "NED": "Países Bajos", "JPN": "Japón", "SWE": "Suecia", "TUN": "Túnez",
+    "BEL": "Bélgica", "EGY": "Egipto", "IRN": "Irán", "NZL": "Nueva Zelanda",
+    "ESP": "España", "CPV": "Cabo Verde", "KSA": "Arabia Saudita", "URU": "Uruguay",
+    "FRA": "Francia", "SEN": "Senegal", "IRQ": "Irak", "NOR": "Noruega",
+    "ARG": "Argentina", "ALG": "Argelia", "AUT": "Austria", "JOR": "Jordania",
+    "POR": "Portugal", "COD": "R. D. Congo", "UZB": "Uzbekistán", "COL": "Colombia",
+    "ENG": "Inglaterra", "CRO": "Croacia", "GHA": "Ghana", "PAN": "Panamá"
+};
+
 // 1. La Base de Datos del Fixture (Fase de Grupos)
 const fixtureData = {
     "GRUPO A": [
@@ -260,9 +276,6 @@ function generarEliminatoriasDOM() {
     }
 }
 
-
-
-
 function calcularTablas() {
     for (const nombreGrupo of Object.keys(fixtureData)) {
         const idGrupoClean = nombreGrupo.replace(" ", "-");
@@ -298,7 +311,12 @@ function calcularTablas() {
         tablaOrdenada.forEach((equipo, index) => {
             const tr = document.createElement('tr');
             if (index < 2) tr.className = 'clasificado';
-            tr.innerHTML = `<td>${index + 1}</td><td class="text-left font-bold">${equipo.name}</td><td class="font-bold text-verde">${equipo.pts}</td><td>${equipo.pj}</td><td>${equipo.gf - equipo.gc}</td>`;
+            
+            // CAMBIO AQUÍ: Consultamos el diccionario 'nombresPaises' usando la sigla (equipo.name)
+            // Si existe la traducción la usa, sino, usa la sigla original por descarte.
+            const nombreCompleto = nombresPaises[equipo.name] || equipo.name;
+
+            tr.innerHTML = `<td>${index + 1}</td><td class="text-left font-bold">${nombreCompleto}</td><td class="font-bold text-verde">${equipo.pts}</td><td>${equipo.pj}</td><td>${equipo.gf - equipo.gc}</td>`;
             tbody.appendChild(tr);
         });
     }
@@ -312,7 +330,6 @@ function guardarPartidoGrupo(inputCambiado) {
     localStorage.setItem(`grupo_${partidoId}`, JSON.stringify({ local: golLocal, visitante: golVisitante }));
 }
 
-
 function guardarPartidoEliminatorio(inputCambiado) {
     const partidoCard = inputCambiado.closest('.partido-eliminatorio');
     const partidoId = partidoCard.getAttribute('data-partido-id');
@@ -320,7 +337,6 @@ function guardarPartidoEliminatorio(inputCambiado) {
     const nameL = partidoCard.querySelector('.local-name').value;
     const nameV = partidoCard.querySelector('.visitante-name').value;
     
-    // Cambiado: Leemos el .value puro como texto, sin forzar conversión a número entero
     const golL = partidoCard.querySelector('.marcador [data-equipo="local"]').value;
     const golV = partidoCard.querySelector('.marcador [data-equipo="visitante"]').value;
 
