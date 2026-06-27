@@ -117,48 +117,48 @@ const fixtureData = {
 // 2. Estructura Completa de Eliminatorias Manuales (Fiel al PDF oficial de FIFA)
 const eliminatoriasData = {
     "DIECISEISAVOS DE FINAL": [
-        { id: "P73", info: "Dom 28 junio 16:00 - Los Angeles", placeholderL: "2° Grupo A", placeholderV: "2° Grupo B" },
-        { id: "P74", info: "Lun 29 junio 17:30 - Boston", placeholderL: "1° Grupo E", placeholderV: "3° A/B/C/D/F" },
-        { id: "P75", info: "Lun 29 junio 22:00 - Monterrey", placeholderL: "1° Grupo F", placeholderV: "2° Grupo C" },
-        { id: "P76", info: "Lun 29 junio 14:00 - Houston", placeholderL: "1° Grupo C", placeholderV: "2° Grupo F" },
-        { id: "P77", info: "Mar 30 junio 18:00 - Nueva York NJ", placeholderL: "1° Grupo I", placeholderV: "3° C/D/F/G/H" },
-        { id: "P78", info: "Mar 30 junio 14:00 - Dallas", placeholderL: "2° Grupo E", placeholderV: "2° Grupo I" },
-        { id: "P79", info: "Mar 30 junio 22:00 - Cdad. de México", placeholderL: "1° Grupo A", placeholderV: "3° C/E/F/H/I" },
-        { id: "P80", info: "Mié 1 julio 13:00 - Atlanta", placeholderL: "1° Grupo L", placeholderV: "3° E/H/I/J/K" },
-        { id: "P81", info: "Mié 1 julio 21:00 - San Francisco", placeholderL: "1° Grupo D", placeholderV: "3° B/E/F/I/J" },
-        { id: "P82", info: "Mié 1 julio 17:00 - Seattle", placeholderL: "1° Grupo G", placeholderV: "3° A/E/H/I/J" },
-        { id: "P83", info: "Jue 2 julio 20:00 - Toronto", placeholderL: "2° Grupo K", placeholderV: "2° Grupo L" },
-        { id: "P84", info: "Jue 2 julio 16:00 - Los Angeles", placeholderL: "1° Grupo H", placeholderV: "2° Grupo J" },
-        { id: "P85", info: "Jue 2 julio 00:00 - Vancouver", placeholderL: "1° Grupo B", placeholderV: "3° E/F/G/I/J" },
-        { id: "P86", info: "Vie 3 julio 19:00 - Miami", placeholderL: "1° Grupo J", placeholderV: "2° Grupo H" },
-        { id: "P87", info: "Vie 3 julio 22:30 - Kansas City", placeholderL: "1° Grupo K", placeholderV: "3° D/E/I/J/L" },
-        { id: "P88", info: "Vie 3 julio 15:00 - Dallas", placeholderL: "2° Grupo D", placeholderV: "2° Grupo G" }
+        { id: "P73", info: "Domingo 28 de Junio 16:00 - Los Angeles", placeholderL: "2° Grupo A", placeholderV: "2° Grupo B" },
+        { id: "P74", info: "Lunes 29 de Junio 17:30 - Boston", placeholderL: "1° Grupo E", placeholderV: "3° A/B/C/D/F" },
+        { id: "P75", info: "Lunes 29 de Junio 22:00 - Monterrey", placeholderL: "1° Grupo F", placeholderV: "2° Grupo C" },
+        { id: "P76", info: "Lunes 29 de Junio 14:00 - Houston", placeholderL: "1° Grupo C", placeholderV: "2° Grupo F" },
+        { id: "P77", info: "Martes 30 de Junio 18:00 - Nueva York NJ", placeholderL: "1° Grupo I", placeholderV: "3° C/D/F/G/H" },
+        { id: "P78", info: "Martes 30 de Junio 14:00 - Dallas", placeholderL: "2° Grupo E", placeholderV: "2° Grupo I" },
+        { id: "P79", info: "Martes 30 de Junio 22:00 - Cdad. de México", placeholderL: "1° Grupo A", placeholderV: "3° C/E/F/H/I" },
+        { id: "P80", info: "Miércoles 1 de Julio 13:00 - Atlanta", placeholderL: "1° Grupo L", placeholderV: "3° E/H/I/J/K" },
+        { id: "P81", info: "Miércoles 1 de Julio 21:00 - San Francisco", placeholderL: "1° Grupo D", placeholderV: "3° B/E/F/I/J" },
+        { id: "P82", info: "Miércoles 1 de Julio 17:00 - Seattle", placeholderL: "1° Grupo G", placeholderV: "3° A/E/H/I/J" },
+        { id: "P83", info: "Jueves 2 de Julio 20:00 - Toronto", placeholderL: "2° Grupo K", placeholderV: "2° Grupo L" },
+        { id: "P84", info: "Jueves 2 de Julio 16:00 - Los Angeles", placeholderL: "1° Grupo H", placeholderV: "2° Grupo J" },
+        { id: "P85", info: "Jueves 2 de Julio 00:00 - Vancouver", placeholderL: "1° Grupo B", placeholderV: "3° E/F/G/I/J" },
+        { id: "P86", info: "Viernes 3 de Julio 19:00 - Miami", placeholderL: "1° Grupo J", placeholderV: "2° Grupo H" },
+        { id: "P87", info: "Viernes 3 de Julio 22:30 - Kansas City", placeholderL: "1° Grupo K", placeholderV: "3° D/E/I/J/L" },
+        { id: "P88", info: "Viernes 3 de Julio 15:00 - Dallas", placeholderL: "2° Grupo D", placeholderV: "2° Grupo G" }
     ],
     "OCTAVOS DE FINAL": [
-        { id: "P89", info: "Sáb 4 julio 18:00 - Filadelfia", placeholderL: "Ganador P74", placeholderV: "Ganador P77" },
-        { id: "P90", info: "Sáb 4 julio 14:00 - Houston", placeholderL: "Ganador P73", placeholderV: "Ganador P75" },
-        { id: "P91", info: "Dom 5 julio 17:00 - Nueva York NJ", placeholderL: "Ganador P76", placeholderV: "Ganador P78" },
-        { id: "P92", info: "Dom 5 julio 21:00 - Cdad. de México", placeholderL: "Ganador P79", placeholderV: "Ganador P80" },
-        { id: "P93", info: "Lun 6 julio 16:00 - Dallas", placeholderL: "Ganador P83", placeholderV: "Ganador P84" },
-        { id: "P94", info: "Lun 6 julio 21:00 - Seattle", placeholderL: "Ganador P81", placeholderV: "Ganador P82" },
-        { id: "P95", info: "Mar 7 julio 13:00 - Atlanta", placeholderL: "Ganador P86", placeholderV: "Ganador P88" },
-        { id: "P96", info: "Mar 7 julio 17:00 - Vancouver", placeholderL: "Ganador P85", placeholderV: "Ganador P87" }
+        { id: "P89", info: "Sábado 4 de Julio 18:00 - Filadelfia", placeholderL: "Ganador P74", placeholderV: "Ganador P77" },
+        { id: "P90", info: "Sábado 4 de Julio 14:00 - Houston", placeholderL: "Ganador P73", placeholderV: "Ganador P75" },
+        { id: "P91", info: "Domingo 5 de Julio 17:00 - Nueva York NJ", placeholderL: "Ganador P76", placeholderV: "Ganador P78" },
+        { id: "P92", info: "Domingo 5 de Julio 21:00 - Cdad. de México", placeholderL: "Ganador P79", placeholderV: "Ganador P80" },
+        { id: "P93", info: "Lunes 6 de Julio 16:00 - Dallas", placeholderL: "Ganador P83", placeholderV: "Ganador P84" },
+        { id: "P94", info: "Lunes 6 de Julio 21:00 - Seattle", placeholderL: "Ganador P81", placeholderV: "Ganador P82" },
+        { id: "P95", info: "Martes 7 de Julio 13:00 - Atlanta", placeholderL: "Ganador P86", placeholderV: "Ganador P88" },
+        { id: "P96", info: "Martes 7 de Julio 17:00 - Vancouver", placeholderL: "Ganador P85", placeholderV: "Ganador P87" }
     ],
     "CUARTOS DE FINAL": [
-        { id: "P97", info: "Jue 9 julio 17:00 - Boston", placeholderL: "Ganador P89", placeholderV: "Ganador P90" },
-        { id: "P98", info: "Vie 10 julio 16:00 - Los Angeles", placeholderL: "Ganador P93", placeholderV: "Ganador P94" },
-        { id: "P99", info: "Sáb 11 julio 18:00 - Miami", placeholderL: "Ganador P91", placeholderV: "Ganador P92" },
-        { id: "P100", info: "Sáb 11 julio 22:00 - Kansas City", placeholderL: "Ganador P95", placeholderV: "Ganador P96" }
+        { id: "P97", info: "Jueves 9 de Julio 17:00 - Boston", placeholderL: "Ganador P89", placeholderV: "Ganador P90" },
+        { id: "P98", info: "Viernes 10 de Julio 16:00 - Los Angeles", placeholderL: "Ganador P93", placeholderV: "Ganador P94" },
+        { id: "P99", info: "Sábado 11 de Julio 18:00 - Miami", placeholderL: "Ganador P91", placeholderV: "Ganador P92" },
+        { id: "P100", info: "Sábado 11 de Julio 22:00 - Kansas City", placeholderL: "Ganador P95", placeholderV: "Ganador P96" }
     ],
     "SEMIFINALES": [
-        { id: "P101", info: "Mar 14 julio 16:00 - Dallas", placeholderL: "Ganador P97", placeholderV: "Ganador P98" },
-        { id: "P102", info: "Mié 15 julio 16:00 - Atlanta", placeholderL: "Ganador P99", placeholderV: "Ganador P100" }
+        { id: "P101", info: "Martes 14 de Julio 16:00 - Dallas", placeholderL: "Ganador P97", placeholderV: "Ganador P98" },
+        { id: "P102", info: "Miércoles 15 de Julio 16:00 - Atlanta", placeholderL: "Ganador P99", placeholderV: "Ganador P100" }
     ],
     "TERCER PUESTO": [
-        { id: "P103", info: "Sáb 18 julio 18:00 - Miami", placeholderL: "Perdedor P101", placeholderV: "Perdedor P102" }
+        { id: "P103", info: "Sábado 18 de Julio 18:00 - Miami", placeholderL: "Perdedor P101", placeholderV: "Perdedor P102" }
     ],
     "FINAL": [
-        { id: "P104", info: "Dom 19 julio 16:00 - Nueva York NJ", placeholderL: "Ganador P101", placeholderV: "Ganador P102" }
+        { id: "P104", info: "Domingo 19 de Julio 16:00 - Nueva York NJ", placeholderL: "Ganador P101", placeholderV: "Ganador P102" }
     ]
 };
 
